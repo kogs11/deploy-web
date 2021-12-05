@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+}
+
+a {
+    text-decoration: none;
+    color: #1E1E23;
+    font-family: 'work sans', sans serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    transition: 200ms;
+}
+
+li {
+    list-style: none;
+}
+
+ul#menu > li ul {
+    display: none;
+}
+
+ul#menu {
+    max-width: 1200px;
+    font-size: 0px;
+    background-color: #008081;
+    display: flex;
+    text-align: center;
+}
+
+ul#menu li {
+    display: inline;
+    flex-grow: 1;
+    position: relative;
+}
+
+ul#menu li > ul {
+    position: absolute;
+}
+
+ul#menu a{
+    display: inline-block;
+    height: 50px;
+    font-size: 30px;
+    padding: 0px 30px;
+    line-height: 50px;
+    color: white;
+}
+
+ul#menu li:hover > ul {
+    width: 100%;
+    display: block;
+    font-size: 30px;
+    background-color: #008081;
+    left: 0px;
+    top: 100%;
+}
+
+ul#menu li:hover > ul > li {
+    display: block;
+}
+
+ul#menu li:hover {
+    background-color: #008001;
+}
+
+ul#menu > li > ul > li:hover > ul {
+    left: 100%;
+    top: 0px;
+}
+
+ul#menu > li > ul > li > ul > li:hover > ul {
+    left: 100%;
+    top: 0px;
+}
+
+.switch-mobiledrawer {
+    display: flex;
+    margin-top: 300px;
+}
+
+.switch-mobiledrawer > div.swbtn {
+    max-width: 50%;
+    flex-grow: 1;
+}
+
+div.swbtn {
+    text-align: center;
+}
+
+label#switch {
+    background-color: #6EDC5F;
+    display: inline-block;
+    height: 40px;
+    width: 80px;
+    border-radius: 25px;
+    position: relative;
+}
+
+#switch-back{
+    background-color: #DDDDDD;
+    display: inline-block;
+    height: 40px;
+    width: 80px;
+    border-radius: 25px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: 2px 4px 8px #85888C;
+}
+
+#switch-btn{
+    width: 34px;
+    height: 34px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition-duration: 0.5s;
+    box-shadow: 1px 2px 5px #85888C;
+}
+
+#switch input:checked + span > span {
+    transform: translateX(40px);
+    transition-duration: 0.5s
+}
+
+#switch input + span > span {
+    transform: translateX(0px);
+    transition-duration: 0.5s
+}
+
+#switch input:checked + span{
+    background-color: #6EDC5F;
+    transition-duration: 0.5s;
+}
+
+#switch input {
+    display: none;
+}
+
+.mobile-drawer {
+    flex-grow: 1;
+}
+
+nav#mobile-nav {
+    background-color: #1E1E23;
+    height: 65px;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+}
+.phone {
+    background-color: #36383F;
+    border-radius: 40px;
+    width: 300px;
+    height: 600px;
+    Display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 30px 50px 100px #85888C;
+}
+.content {
+    border: 1px solid #36383F;
+    border-radius: 20px;
+    width: 94%;
+    height: 91%;
+    background-color: #F5F6FA;
+    overflow: hidden;
+}
+
+#menuToggle {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 25px;
+    left: 25px;
+    z-index: 1;
+    user-select: none;
+}
+
+#menuToggle input {
+    display: flex;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+#menuToggle span {
+    display: flex;
+    width: 29px;
+    height: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 5px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(-45deg) translate(-3px, -2px);
+    background-color: #36383F;
+}
+
+#menuToggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translate(-2px,-1px);
+}
+
+#mobile-menu {
+    position: absolute;
+    width: 180px;
+    height: 400px;
+    box-shadow: 0 0 10px #85888C;
+    margin: -50px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background-color: #F5F6FA;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#mobile-menu li {
+    padding: 10px 0;
+    transition-delay: 2s;
+}
+
+#mobile-menu a:hover {
+    opacity:0.5;
+}
+
+#menuToggle input:checked ~ ul {
+    transform: none;
+}
